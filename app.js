@@ -4,11 +4,11 @@
 var firstAndPikeElement = document.getElementById('firstAndPike');
 console.log(firstAndPikeElement);
 // create element
-var liEl = document.createElement('li');
-// give element content
-liEl.textContent = 'proof of life';
-// append to the DOM
-firstAndPikeElement.appendChild(liEl);
+// var liEl = document.createElement('li');
+// // give element content
+// liEl.textContent = 'proof of life';
+// // append to the DOM
+// firstAndPikeElement.appendChild(liEl);
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
