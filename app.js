@@ -1,8 +1,8 @@
 'use-strict';
 
 // store element location
-var firstAndPikeElement = document.getElementById('firstAndPike');
-console.log(firstAndPikeElement);
+// var firstAndPikeElement = document.getElementById('firstAndPike');
+// console.log(firstAndPikeElement);
 // create element
 // var liEl = document.createElement('li');
 // // give element content
@@ -169,6 +169,9 @@ var dubai = {
 }
 dubai.render();
 
+// store paris element location
+var parisElement = document.getElementById('paris');
+
 var paris = {
   minCostomersEachHour: 20,
   maxCustomersEachHour: 38,
@@ -177,17 +180,34 @@ var paris = {
   cookiesEachHour: [],
   totalCookiesForTheDay: 0,
 
+  randomNumber: function(min, max) {
+    return Math.floor(Math.random() * (max + 1 - min)) + min;
+  },
+
   render: function() {
     for ( var i = 0; i < hours.length; i++ ) {
-      // create element
+      for ( var i = 0; i < hours.length; i++ ) {
+        // create element
+        var liEl = document.createElement('li');
+        // calculate number of customers for the hour, then add to array
+        var customers = this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+        this.customersEachHour.push(customers);
+        // calculate number of cookies for the hour, then add to array
+        var cookies = Math.round(customers * this.averageCookiesPerCustomer);
+        this.cookiesEachHour.push(cookies);
+        // give element content
+        liEl.textContent = `${hours[i]}: ${cookies} cookies`;
+        // append to DOM
+        parisElement.appendChild(liEl);
+        this.totalCookiesForTheDay += cookies;
+      }
       var liEl = document.createElement('li');
-      // give element content
-      liEl.textContent = hours[i];
-      // append to DOM
-      firstAndPikeElement.appendChild(liEl);
+      liEl.textContent = `Total: ${this.totalCookiesForTheDay}`
+      parisElement.appendChild(liEl);
     }
   }
 }
+paris.render();
 
 var lima = {
   minCostomersEachHour: 2,
