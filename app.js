@@ -65,9 +65,17 @@ var seattle = {
   },
 
   randomCustomers: function() {
-    return this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    var customers = this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    this.customersEachHour.push(customers);
+    return customers;
   },
 
+  calculateCookies: function(customers) {
+    var cookies = Math.round(customers * this.averageCookiesPerCustomer);
+    this.cookiesEachHour.push(cookies);
+    this.totalCookiesForTheDay += cookies;
+    return cookies;
+  },
 
   render: function() {
     for ( var i = 0; i < hours.length; i++ ) {
@@ -75,15 +83,12 @@ var seattle = {
       var liEl = document.createElement('li');
       // calculate number of customers for the hour, then add to array
       var customers = this.randomCustomers();
-      this.customersEachHour.push(customers);
       // calculate number of cookies for the hour, then add to array
-      var cookies = Math.round(customers * this.averageCookiesPerCustomer);
-      this.cookiesEachHour.push(cookies);
+      var cookies = this.calculateCookies(customers);
       // give element content
       liEl.textContent = `${hours[i]}: ${cookies} cookies`;
       // append to DOM
       seattleElement.appendChild(liEl);
-      this.totalCookiesForTheDay += cookies;
     }
     liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
@@ -108,7 +113,16 @@ var tokyo = {
   },
 
   randomCustomers: function() {
-    return this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    var customers = this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    this.customersEachHour.push(customers);
+    return customers;
+  },
+
+  calculateCookies: function(customers) {
+    var cookies = Math.round(customers * this.averageCookiesPerCustomer);
+    this.cookiesEachHour.push(cookies);
+    this.totalCookiesForTheDay += cookies;
+    return cookies;
   },
 
   render: function() {
@@ -117,15 +131,12 @@ var tokyo = {
       var liEl = document.createElement('li');
       // calculate number of customers for the hour, then add to array
       var customers = this.randomCustomers();
-      this.customersEachHour.push(customers);
       // calculate number of cookies for the hour, then add to array
-      var cookies = Math.round(customers * this.averageCookiesPerCustomer);
-      this.cookiesEachHour.push(cookies);
+      var cookies = this.calculateCookies(customers);
       // give element content
       liEl.textContent = `${hours[i]}: ${cookies} cookies`;
       // append to DOM
       tokyoElement.appendChild(liEl);
-      this.totalCookiesForTheDay += cookies;
     }
     liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
@@ -150,7 +161,16 @@ var dubai = {
   },
 
   randomCustomers: function() {
-    return this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    var customers = this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    this.customersEachHour.push(customers);
+    return customers;
+  },
+
+  calculateCookies: function(customers) {
+    var cookies = Math.round(customers * this.averageCookiesPerCustomer);
+    this.cookiesEachHour.push(cookies);
+    this.totalCookiesForTheDay += cookies;
+    return cookies;
   },
 
   render: function() {
@@ -159,15 +179,12 @@ var dubai = {
       var liEl = document.createElement('li');
       // calculate number of customers for the hour, then add to array
       var customers = this.randomCustomers();
-      this.customersEachHour.push(customers);
       // calculate number of cookies for the hour, then add to array
-      var cookies = Math.round(customers * this.averageCookiesPerCustomer);
-      this.cookiesEachHour.push(cookies);
+      var cookies = this.calculateCookies(customers);
       // give element content
       liEl.textContent = `${hours[i]}: ${cookies} cookies`;
       // append to DOM
       dubaiElement.appendChild(liEl);
-      this.totalCookiesForTheDay += cookies;
     }
     liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
@@ -192,7 +209,16 @@ var paris = {
   },
 
   randomCustomers: function() {
-    return this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    var customers = this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    this.customersEachHour.push(customers);
+    return customers;
+  },
+
+  calculateCookies: function(customers) {
+    var cookies = Math.round(customers * this.averageCookiesPerCustomer);
+    this.cookiesEachHour.push(cookies);
+    this.totalCookiesForTheDay += cookies;
+    return cookies;
   },
 
   render: function() {
@@ -201,15 +227,12 @@ var paris = {
       var liEl = document.createElement('li');
       // calculate number of customers for the hour, then add to array
       var customers = this.randomCustomers();
-      this.customersEachHour.push(customers);
       // calculate number of cookies for the hour, then add to array
-      var cookies = Math.round(customers * this.averageCookiesPerCustomer);
-      this.cookiesEachHour.push(cookies);
+      var cookies = this.calculateCookies(customers);
       // give element content
       liEl.textContent = `${hours[i]}: ${cookies} cookies`;
       // append to DOM
       parisElement.appendChild(liEl);
-      this.totalCookiesForTheDay += cookies;
     }
     liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
@@ -233,7 +256,16 @@ var lima = {
   },
 
   randomCustomers: function() {
-    return this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    var customers = this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+    this.customersEachHour.push(customers);
+    return customers;
+  },
+
+  calculateCookies: function(customers) {
+    var cookies = Math.round(customers * this.averageCookiesPerCustomer);
+    this.cookiesEachHour.push(cookies);
+    this.totalCookiesForTheDay += cookies;
+    return cookies;
   },
 
   render: function() {
@@ -242,15 +274,13 @@ var lima = {
       var liEl = document.createElement('li');
       // calculate number of customers for the hour, then add to array
       var customers = this.randomCustomers();
-      this.customersEachHour.push(customers);
       // calculate number of cookies for the hour, then add to array
-      var cookies = Math.round(customers * this.averageCookiesPerCustomer);
-      this.cookiesEachHour.push(cookies);
+      var cookies = this.calculateCookies(customers);
       // give element content
       liEl.textContent = `${hours[i]}: ${cookies} cookies`;
       // append to DOM
       limaElement.appendChild(liEl);
-      this.totalCookiesForTheDay += cookies;
+      // this.totalCookiesForTheDay += cookies;
     }
     liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
