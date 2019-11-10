@@ -77,22 +77,25 @@ var seattle = {
     return cookies;
   },
 
-  render: function() {
-    for ( var i = 0; i < hours.length; i++ ) {
-      // create element
-      var liEl = document.createElement('li');
-      // calculate number of customers for the hour, then add to array
-      var customers = this.randomCustomers();
-      // calculate number of cookies for the hour, then add to array
-      var cookies = this.calculateCookies(customers);
-      // give element content
-      liEl.textContent = `${hours[i]}: ${cookies} cookies`;
-      // append to DOM
-      seattleElement.appendChild(liEl);
-    }
-    liEl = document.createElement('li');
+  updateLi: function(i, cookies) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hours[i]}: ${cookies} cookies`;
+    seattleElement.appendChild(liEl);
+  },
+
+  totalLi: function() {
+    var liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
     seattleElement.appendChild(liEl);
+  },
+
+  render: function() {
+    for ( var i = 0; i < hours.length; i++ ) {
+      var customers = this.randomCustomers();
+      var cookies = this.calculateCookies(customers);
+      this.updateLi(i, cookies);
+    }
+    this.totalLi();
   }
 };
 seattle.render();
@@ -125,22 +128,25 @@ var tokyo = {
     return cookies;
   },
 
-  render: function() {
-    for ( var i = 0; i < hours.length; i++ ) {
-      // create element
-      var liEl = document.createElement('li');
-      // calculate number of customers for the hour, then add to array
-      var customers = this.randomCustomers();
-      // calculate number of cookies for the hour, then add to array
-      var cookies = this.calculateCookies(customers);
-      // give element content
-      liEl.textContent = `${hours[i]}: ${cookies} cookies`;
-      // append to DOM
-      tokyoElement.appendChild(liEl);
-    }
-    liEl = document.createElement('li');
+  updateLi: function(i, cookies) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hours[i]}: ${cookies} cookies`;
+    tokyoElement.appendChild(liEl);
+  },
+
+  totalLi: function() {
+    var liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
     tokyoElement.appendChild(liEl);
+  },
+
+  render: function() {
+    for ( var i = 0; i < hours.length; i++ ) {
+      var customers = this.randomCustomers();
+      var cookies = this.calculateCookies(customers);
+      this.updateLi(i, cookies);
+    }
+    this.totalLi();
   }
 };
 tokyo.render();
@@ -172,23 +178,29 @@ var dubai = {
     this.totalCookiesForTheDay += cookies;
     return cookies;
   },
+  updateLi: function(i, cookies) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hours[i]}: ${cookies} cookies`;
+    dubaiElement.appendChild(liEl);
+  },
+
+  totalLi: function() {
+    var liEl = document.createElement('li');
+    liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
+    dubaiElement.appendChild(liEl);
+  },
 
   render: function() {
     for ( var i = 0; i < hours.length; i++ ) {
       // create element
-      var liEl = document.createElement('li');
       // calculate number of customers for the hour, then add to array
       var customers = this.randomCustomers();
       // calculate number of cookies for the hour, then add to array
       var cookies = this.calculateCookies(customers);
       // give element content
-      liEl.textContent = `${hours[i]}: ${cookies} cookies`;
-      // append to DOM
-      dubaiElement.appendChild(liEl);
+      this.updateLi(i, cookies);
     }
-    liEl = document.createElement('li');
-    liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
-    dubaiElement.appendChild(liEl);
+    this.totalLi();
   }
 };
 dubai.render();
@@ -221,22 +233,25 @@ var paris = {
     return cookies;
   },
 
-  render: function() {
-    for ( var i = 0; i < hours.length; i++ ) {
-      // create element
-      var liEl = document.createElement('li');
-      // calculate number of customers for the hour, then add to array
-      var customers = this.randomCustomers();
-      // calculate number of cookies for the hour, then add to array
-      var cookies = this.calculateCookies(customers);
-      // give element content
-      liEl.textContent = `${hours[i]}: ${cookies} cookies`;
-      // append to DOM
-      parisElement.appendChild(liEl);
-    }
-    liEl = document.createElement('li');
+  updateLi: function(i, cookies) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hours[i]}: ${cookies} cookies`;
+    parisElement.appendChild(liEl);
+  },
+
+  totalLi: function() {
+    var liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
     parisElement.appendChild(liEl);
+  },
+
+  render: function() {
+    for ( var i = 0; i < hours.length; i++ ) {
+      var customers = this.randomCustomers();
+      var cookies = this.calculateCookies(customers);
+      this.updateLi(i, cookies);
+    }
+    this.totalLi();
   }
 };
 paris.render();
@@ -268,23 +283,25 @@ var lima = {
     return cookies;
   },
 
-  render: function() {
-    for ( var i = 0; i < hours.length; i++ ) {
-      // create element
-      var liEl = document.createElement('li');
-      // calculate number of customers for the hour, then add to array
-      var customers = this.randomCustomers();
-      // calculate number of cookies for the hour, then add to array
-      var cookies = this.calculateCookies(customers);
-      // give element content
-      liEl.textContent = `${hours[i]}: ${cookies} cookies`;
-      // append to DOM
-      limaElement.appendChild(liEl);
-      // this.totalCookiesForTheDay += cookies;
-    }
-    liEl = document.createElement('li');
+  updateLi: function(i, cookies) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hours[i]}: ${cookies} cookies`;
+    limaElement.appendChild(liEl);
+  },
+
+  totalLi: function() {
+    var liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
     limaElement.appendChild(liEl);
+  },
+
+  render: function() {
+    for ( var i = 0; i < hours.length; i++ ) {
+      var customers = this.randomCustomers();
+      var cookies = this.calculateCookies(customers);
+      this.updateLi(i, cookies);
+    }
+    this.totalLi();
   }
 };
 lima.render();
