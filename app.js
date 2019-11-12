@@ -59,7 +59,6 @@ function randomNumber(min, max) {
 var storeElement = document.getElementById('stores');
 
 var seattle = {
-  // add name: 'Seattle',
   name: 'Seattle',
   minCostomersEachHour: 23,
   maxCustomersEachHour: 65,
