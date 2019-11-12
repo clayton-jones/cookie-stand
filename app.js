@@ -49,10 +49,13 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 // firstAndPikeShop.render();
 
+
+// store one store element that each object can use
 // store seattle element location
 var seattleElement = document.getElementById('seattle');
 
 var seattle = {
+  // add name: 'Seattle',
   minCostomersEachHour: 23,
   maxCustomersEachHour: 65,
   averageCookiesPerCustomer: 6.3,
@@ -64,12 +67,16 @@ var seattle = {
     return Math.floor(Math.random() * (max + 1 - min)) + min;
   },
 
+  // doesn't need to return
+  // use for loop to push to customersEachHour array
   randomCustomers: function() {
     var customers = this.randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
     this.customersEachHour.push(customers);
     return customers;
   },
 
+  // doesn't need to return or use a parameter
+  // use for loop to push to cookiesEachHour array
   calculateCookies: function(customers) {
     var cookies = Math.round(customers * this.averageCookiesPerCustomer);
     this.cookiesEachHour.push(cookies);
@@ -77,18 +84,20 @@ var seattle = {
     return cookies;
   },
 
+  // move this into render function
   updateLi: function(i, cookies) {
     var liEl = document.createElement('li');
     liEl.textContent = `${hours[i]}: ${cookies} cookies`;
     seattleElement.appendChild(liEl);
   },
-
+  // move this into render function
   totalLi: function() {
     var liEl = document.createElement('li');
     liEl.textContent = `Total: ${this.totalCookiesForTheDay}`;
     seattleElement.appendChild(liEl);
   },
 
+  // use arrays from above to get customers and cookies
   render: function() {
     for ( var i = 0; i < hours.length; i++ ) {
       var customers = this.randomCustomers();
