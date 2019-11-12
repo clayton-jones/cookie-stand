@@ -85,6 +85,7 @@ var seattle = {
   },
 
   // move this into render function
+  // doesn't need perameters
   updateLi: function(i, cookies) {
     var liEl = document.createElement('li');
     liEl.textContent = `${hours[i]}: ${cookies} cookies`;
@@ -110,6 +111,7 @@ var seattle = {
 seattle.render();
 
 // store tokyo element location
+// don't need, use single global from above
 var tokyoElement = document.getElementById('tokyo');
 
 var tokyo = {
@@ -161,6 +163,7 @@ var tokyo = {
 tokyo.render();
 
 // save dubai element location
+// don't need, use single global from above
 var dubaiElement = document.getElementById('dubai');
 
 var dubai = {
@@ -215,6 +218,7 @@ var dubai = {
 dubai.render();
 
 // store paris element location
+// don't need, use single global from above
 var parisElement = document.getElementById('paris');
 
 var paris = {
@@ -265,6 +269,7 @@ var paris = {
 };
 paris.render();
 
+// don't need, use single global from above
 var limaElement = document.getElementById('lima');
 
 var lima = {
