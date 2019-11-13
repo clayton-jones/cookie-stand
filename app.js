@@ -137,10 +137,13 @@ var dubai = {
   render: function() {
     this.randomCustomers();
     this.calculateCookies();
+
     var h2El = document.createElement('h2');
     h2El.textContent = this.name;
     storeElement.appendChild(h2El);
+    
     var ulEl = document.createElement('ul');
+
     for ( var i = 0; i < hours.length; i++ ) {
       var liEl = document.createElement('li');
       liEl.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
