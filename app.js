@@ -13,7 +13,7 @@ var storeElement = document.getElementById('stores');
 
 var seattle = {
   name: 'Seattle',
-  minCostomersEachHour: 23,
+  minCustomersEachHour: 23,
   maxCustomersEachHour: 65,
   averageCookiesPerCustomer: 6.3,
   customersEachHour: [],
@@ -23,7 +23,7 @@ var seattle = {
   // loops through hours array and calculates random customers based on store min and max
   randomCustomers: function() {
     for (var i = 0; i < hours.length; i++) {
-      var customers = randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+      var customers = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
       this.customersEachHour.push(customers);
     }
   },
@@ -61,7 +61,7 @@ seattle.render();
 
 var tokyo = {
   name: 'Tokyo',
-  minCostomersEachHour: 3,
+  minCustomersEachHour: 3,
   maxCustomersEachHour: 24,
   averageCookiesPerCustomer: 1.2,
   customersEachHour: [],
@@ -71,7 +71,7 @@ var tokyo = {
   // loops through hours array and calculates random customers based on store min and max
   randomCustomers: function() {
     for (var i = 0; i < hours.length; i++) {
-      var customers = randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+      var customers = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
       this.customersEachHour.push(customers);
     }
   },
@@ -109,7 +109,7 @@ tokyo.render();
 
 var dubai = {
   name: 'Dubai',
-  minCostomersEachHour: 11,
+  minCustomersEachHour: 11,
   maxCustomersEachHour: 38,
   averageCookiesPerCustomer: 3.7,
   customersEachHour: [],
@@ -119,7 +119,7 @@ var dubai = {
   // loops through hours array and calculates random customers based on store min and max
   randomCustomers: function() {
     for (var i = 0; i < hours.length; i++) {
-      var customers = randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+      var customers = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
       this.customersEachHour.push(customers);
     }
   },
@@ -141,7 +141,7 @@ var dubai = {
     var h2El = document.createElement('h2');
     h2El.textContent = this.name;
     storeElement.appendChild(h2El);
-    
+
     var ulEl = document.createElement('ul');
 
     for ( var i = 0; i < hours.length; i++ ) {
@@ -159,7 +159,7 @@ dubai.render();
 
 var paris = {
   name: 'Paris',
-  minCostomersEachHour: 20,
+  minCustomersEachHour: 20,
   maxCustomersEachHour: 38,
   averageCookiesPerCustomer: 2.3,
   customersEachHour: [],
@@ -169,7 +169,7 @@ var paris = {
   // loops through hours array and calculates random customers based on store min and max
   randomCustomers: function() {
     for (var i = 0; i < hours.length; i++) {
-      var customers = randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+      var customers = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
       this.customersEachHour.push(customers);
     }
   },
@@ -207,7 +207,7 @@ paris.render();
 
 var lima = {
   name: 'Lima',
-  minCostomersEachHour: 2,
+  minCustomersEachHour: 2,
   maxCustomersEachHour: 16,
   averageCookiesPerCustomer: 4.7,
   customersEachHour: [],
@@ -217,7 +217,7 @@ var lima = {
   // loops through hours array and calculates random customers based on store min and max
   randomCustomers: function() {
     for (var i = 0; i < hours.length; i++) {
-      var customers = randomNumber(this.minCostomersEachHour, this.maxCustomersEachHour);
+      var customers = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
       this.customersEachHour.push(customers);
     }
   },
