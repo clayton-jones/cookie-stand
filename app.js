@@ -9,14 +9,11 @@ var hourlyTotals = [];
 
 var allStoresTotalSold = 0;
 
-// global random number function to be used by objects
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max + 1 - min)) + min;
-}
 
 // stores one store element that each object can use to append to
 var storeElement = document.getElementById('stores');
 
+// object constructor for stores
 function Store(name, minCustomersEachHour, maxCustomersEachHour, averageCookiesPerCustomer) {
   this.name = name;
   this.minCustomersEachHour = minCustomersEachHour;
@@ -28,9 +25,16 @@ function Store(name, minCustomersEachHour, maxCustomersEachHour, averageCookiesP
   allStores.push(this);
 }
 
+// ============= global functions ==============
+
+// random number function to be used by objects
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max + 1 - min)) + min;
+}
+
+// creates header
 var makeHeader = function() {
   var trEl = document.createElement('tr');
-  // create blank th
   var thEl = document.createElement('th');
   thEl.textContent = '';
   trEl.appendChild(thEl);
@@ -46,6 +50,7 @@ var makeHeader = function() {
   storeElement.appendChild(trEl);
 };
 
+// creates footer
 var makeFooter = function() {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
@@ -63,8 +68,12 @@ var makeFooter = function() {
   storeElement.appendChild(trEl);
 };
 
+// ============= end global functions ==============
 
-// prototypes
+
+
+// ============= prototypes ==============
+
 Store.prototype.randomCustomers = function() {
   for (var i = 0; i < hours.length; i++) {
     var customers = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
@@ -106,6 +115,9 @@ Store.prototype.render = function() {
   this.makeRow();
 };
 
+// ============= end prototypes ==============
+
+// creating store objects
 new Store('Seattle', 23, 65, 6.3);
 new Store('Tokyo', 5, 16, 1.2);
 new Store('Dubai', 11, 38, 3.7);
@@ -114,7 +126,7 @@ new Store('Lima', 2, 16, 4.7);
 
 
 
-
+// calling functions to create the table
 makeHeader();
 for (var i = 0; i < allStores.length; i++) {
   allStores[i].render();
