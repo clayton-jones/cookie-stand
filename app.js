@@ -46,6 +46,24 @@ var makeHeader = function() {
   storeElement.appendChild(trEl);
 };
 
+var makeFooter = function() {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Totals:';
+  trEl.appendChild(thEl);
+  for (var i = 0; i < hours.length; i++) {
+    var tdEl = document.createElement('td');
+    tdEl.textContent = `${hourlyTotals[i]}`;
+    trEl.appendChild(tdEl);
+  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = allStoresTotalSold;
+
+  trEl.appendChild(tdEl);
+  storeElement.appendChild(trEl);
+};
+
+
 // prototypes
 Store.prototype.randomCustomers = function() {
   for (var i = 0; i < hours.length; i++) {
@@ -97,3 +115,4 @@ var seattle = new Store('Seattle', 23, 65, 6.3);
 
 makeHeader();
 seattle.render();
+makeFooter();
