@@ -41,3 +41,14 @@ nav li {
 .dropdown:hover .dropdowncontent {
   display: block;
 }
+
+td {
+  background-color: rgba(220, 220, 220, 0.493);
+  outline: 1px solid black;
+  padding: 4px;
+  text-align: center;
+}
+
+th {
+  padding: 5px;
+}

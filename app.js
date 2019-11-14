@@ -62,7 +62,7 @@ var makeFooter = function() {
     trEl.appendChild(tdEl);
   }
   tdEl = document.createElement('td');
-  tdEl.textContent = allStoresTotalSold;
+  tdEl.textContent = `Franchise total: ${allStoresTotalSold}`;
 
   trEl.appendChild(tdEl);
   storeElement.appendChild(trEl);
