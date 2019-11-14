@@ -57,14 +57,14 @@ var makeFooter = function() {
   thEl.textContent = 'Totals:';
   trEl.appendChild(thEl);
   for (var i = 0; i < hours.length; i++) {
-    var tdEl = document.createElement('td');
-    tdEl.textContent = `${hourlyTotals[i]}`;
-    trEl.appendChild(tdEl);
+    thEl = document.createElement('th');
+    thEl.textContent = `${hourlyTotals[i]}`;
+    trEl.appendChild(thEl);
   }
-  tdEl = document.createElement('td');
-  tdEl.textContent = `Franchise total: ${allStoresTotalSold}`;
+  thEl = document.createElement('th');
+  thEl.textContent = `Franchise total: ${allStoresTotalSold}`;
 
-  trEl.appendChild(tdEl);
+  trEl.appendChild(thEl);
   storeElement.appendChild(trEl);
 };
 
