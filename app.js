@@ -119,6 +119,32 @@ Store.prototype.render = function() {
 
 // ============= end prototypes ==============
 
+// ============= event listeners ==============
+
+var storeForm = document.getElementById('store-form');
+storeForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  var storeName = event.target.inputStoreName.value;
+  var minCust = event.target.inputMinCust.value;
+  var maxCust = event.target.inputMaxCust.value;
+  var avgCookies = event.target.inputAvgCookiesPerCust.value;
+
+  console.log('storeName: ', storeName);
+  console.log('minCust: ', minCust);
+  console.log('maxCust: ', maxCust);
+  console.log('avgCookies: ', avgCookies);
+
+  event.target.inputStoreName.value = null;
+  event.target.inputMinCust.value = null;
+  event.target.inputMaxCust.value = null;
+  event.target.inputAvgCookiesPerCust.value = null;
+
+}
+
+// ============= end event listeners ==============
+
 // creating store objects
 new Store('Seattle', 23, 65, 6.3);
 new Store('Tokyo', 5, 16, 1.2);
