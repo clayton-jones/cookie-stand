@@ -5,9 +5,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 var allStores = [];
 
-
 var allStoresTotalSold = 0;
-
 
 // stores one store element that each object can use to append to
 var storeElement = document.getElementById('stores');
@@ -22,6 +20,8 @@ function Store(name, minCustomersEachHour, maxCustomersEachHour, averageCookiesP
   this.cookiesPerHourArray = [];
   this.totalCookiesForTheDay = 0;
   allStores.push(this);
+  this.randomCustomers();
+  this.calculateCookies();
   this.render();
 }
 
@@ -76,7 +76,6 @@ var makeFooter = function() {
 // ============= end global functions ==============
 
 
-
 // ============= prototypes ==============
 
 Store.prototype.randomCustomers = function() {
@@ -96,7 +95,10 @@ Store.prototype.calculateCookies = function() {
   }
 };
 
-Store.prototype.makeRow = function() {
+
+Store.prototype.render = function() {
+  // this.randomCustomers();
+  // this.calculateCookies();
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = this.name;
@@ -113,14 +115,10 @@ Store.prototype.makeRow = function() {
   storeElement.appendChild(trEl);
 };
 
-Store.prototype.render = function() {
-  this.randomCustomers();
-  this.calculateCookies();
-  this.makeRow();
-};
-
 // ============= end prototypes ==============
 
+
+// ============= creating table ==============
 
 makeHeader();
 
@@ -133,6 +131,9 @@ new Store('Lima', 2, 16, 4.7);
 
 makeFooter();
 
+// ============= end table creation ==============
+
+
 // ============= event listeners ==============
 
 var storeForm = document.getElementById('store-form');
@@ -140,6 +141,7 @@ storeForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
+
   var removeFooter = document.getElementById('stores').lastChild;
   removeFooter.remove();
 
@@ -149,6 +151,7 @@ function handleSubmit(event) {
   var avgCookies = parseInt(event.target.inputAvgCookiesPerCust.value);
 
   new Store(storeName, minCust, maxCust, avgCookies);
+
   event.target.inputStoreName.value = null;
   event.target.inputMinCust.value = null;
   event.target.inputMaxCust.value = null;
