@@ -23,13 +23,20 @@ function Store(name, minCustomersEachHour, maxCustomersEachHour, averageCookiesP
   this.cookiesPerHourArray = [];
   this.totalCookiesForTheDay = 0;
   allStores.push(this);
+  // this.randomCustomers();
+  // this.calculateCookies();
+  this.render();
 }
 
 // ============= global functions ==============
 
 // random number function to be used by objects
 function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max + 1 - min)) + min;
+  // console.log('min: ', min);
+  // console.log('max', max);
+  var num = Math.floor(Math.random() * (max + 1 - min)) + min;
+  // console.log('randomNum: ', num);
+  return num;
 }
 
 // creates header
@@ -57,8 +64,12 @@ var makeFooter = function() {
   thEl.textContent = 'Totals:';
   trEl.appendChild(thEl);
   for (var i = 0; i < hours.length; i++) {
+    var cookie = 0;
     thEl = document.createElement('th');
-    thEl.textContent = `${hourlyTotals[i]}`;
+    for (var j = 0; j < allStores.length; j++) {
+      cookie += allStores[j].cookiesPerHourArray[i];
+    }
+    thEl.textContent = cookie;
     trEl.appendChild(thEl);
   }
   thEl = document.createElement('th');
@@ -77,8 +88,11 @@ var makeFooter = function() {
 Store.prototype.randomCustomers = function() {
   for (var i = 0; i < hours.length; i++) {
     var customers = randomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
+    // console.log(`${this.name}: ${customers}`);
+    // console.log('minCust: ', this.minCustomersEachHour);
+    // console.log('maxCust: ', this.maxCustomersEachHour)
     this.customersEachHourArray.push(customers);
-    hourlyTotals.push(0);
+    // hourlyTotals.push(0);
   }
 };
 
@@ -119,31 +133,9 @@ Store.prototype.render = function() {
 
 // ============= end prototypes ==============
 
-// ============= event listeners ==============
 
-var storeForm = document.getElementById('store-form');
-storeForm.addEventListener('submit', handleSubmit);
-
-function handleSubmit(event) {
-  event.preventDefault();
-  var storeName = event.target.inputStoreName.value;
-  var minCust = event.target.inputMinCust.value;
-  var maxCust = event.target.inputMaxCust.value;
-  var avgCookies = event.target.inputAvgCookiesPerCust.value;
-
-  console.log('storeName: ', storeName);
-  console.log('minCust: ', minCust);
-  console.log('maxCust: ', maxCust);
-  console.log('avgCookies: ', avgCookies);
-
-  event.target.inputStoreName.value = null;
-  event.target.inputMinCust.value = null;
-  event.target.inputMaxCust.value = null;
-  event.target.inputAvgCookiesPerCust.value = null;
-
-}
-
-// ============= end event listeners ==============
+// calling functions to create the table
+makeHeader();
 
 // creating store objects
 new Store('Seattle', 23, 65, 6.3);
@@ -152,13 +144,37 @@ new Store('Dubai', 11, 38, 3.7);
 new Store('Paris', 20, 38, 2.3);
 new Store('Lima', 2, 16, 4.7);
 
+// ============= event listeners ==============
 
+var storeForm = document.getElementById('store-form');
+storeForm.addEventListener('submit', handleSubmit);
 
-// calling functions to create the table
-makeHeader();
-for (var i = 0; i < allStores.length; i++) {
-  allStores[i].render();
+function handleSubmit(event) {
+  event.preventDefault();
+  var storeName = event.target.inputStoreName.value;
+  var minCust = parseInt(event.target.inputMinCust.value);
+  var maxCust = parseInt(event.target.inputMaxCust.value);
+  var avgCookies = parseInt(event.target.inputAvgCookiesPerCust.value);
+
+  // console.log('storeName: ', storeName);
+  // console.log('minCust: ', minCust);
+  // console.log('maxCust: ', maxCust);
+  // console.log('avgCookies: ', avgCookies);
+  new Store(storeName, minCust, maxCust, avgCookies);
+  // console.log('userStore: ', userStore);
+  // userStore.render();
+  event.target.inputStoreName.value = null;
+  event.target.inputMinCust.value = null;
+  event.target.inputMaxCust.value = null;
+  event.target.inputAvgCookiesPerCust.value = null;
+  makeFooter();
 }
+
+// ============= end event listeners ==============
+
+// for (var i = 0; i < allStores.length; i++) {
+//   allStores[i].render();
+// }
 // seattle.render();
 // tokyo.render();
 // dubai.render();
