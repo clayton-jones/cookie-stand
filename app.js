@@ -88,6 +88,8 @@ Store.prototype.calculateCookies = function() {
     this.cookiesPerHourArray.push(cookies);
     this.totalCookiesForTheDay += cookies;
     hourlyTotals[i] += cookies;
+    allStoresTotalSold += cookies;
+
   }
 };
 
@@ -104,7 +106,7 @@ Store.prototype.makeRow = function() {
   }
   tdEl = document.createElement('td');
   tdEl.textContent = this.totalCookiesForTheDay;
-  allStoresTotalSold += this.totalCookiesForTheDay;
+  // allStoresTotalSold += this.totalCookiesForTheDay;
   trEl.appendChild(tdEl);
   storeElement.appendChild(trEl);
 };
