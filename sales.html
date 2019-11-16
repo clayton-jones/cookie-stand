@@ -8,6 +8,20 @@
     <title>Document</title>
   </head>
   <body>
+    <form id="store-form">
+      <fieldset>
+        <legend>Create New Store</legend>
+        <label>Store Name</label>
+        <input id="inputStoreName" type="text" placeholder="store name" required>
+        <label>Minimum Customers</label>
+        <input id="inputMinCust" type="number" placeholder="min" required>
+        <label>Maximum Customers</label>
+        <input id="inputMaxCust" type="number" placeholder="max" required>
+        <label>Average Cookies Per Customer</label>
+        <input id="inputAvgCookiesPerCust" type="number" placeholder="average cookies" required step="0.1">
+        <button value="submit">Submit</button>
+      </fieldset>
+    </form>
     <table id="stores">
       
     </table>
