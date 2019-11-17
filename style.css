@@ -5,6 +5,7 @@ body {
 nav {
   display: inline-block;
 }
+
 nav li {
   display: inline-block;
   padding: 10px;
@@ -55,10 +56,11 @@ nav li {
 
 table {
   border-collapse: collapse;
+  margin: 20px;
 }
 
 td {
-  background-color: rgba(220, 220, 220, 0.493);
+  background-color: rgba(220, 220, 220, 0.329);
   border-bottom: 1px solid rgba(128, 128, 128, 0.25);
   border: 1px solid rgba(128, 128, 128, 0.25);
   padding: 4px 16px;
@@ -67,6 +69,51 @@ td {
 
 th {
   padding: 4px;
+  font-weight: bold;
   /* border-bottom: 1px solid rgba(128, 128, 128, 0.25);
   border-right: 1px solid rgba(128, 128, 128, 0.25); */
+}
+
+form {
+  margin: 20px;
+}
+
+fieldset {
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 2px;
+}
+
+label, input {
+  padding: 5px;
+  display: block;
+  border-radius: 3px;
+  width: 200px;
+}
+
+button {
+  float: right;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: gainsboro;
+  box-shadow: 1px 2px black;
+  /* border: 1px solid black; */
+}
+
+button:hover {
+  background-color: rgb(172, 168, 168);
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(1px);
 }
