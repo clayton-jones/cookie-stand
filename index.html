@@ -4,38 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Salmon Cookies</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header class="page-header">
+      <h1>Pat's Salmon Cookies</h1>
       <div class="header-content">
-        <img src="salmon.png" alt="salmon" width="148" height="43">
+        <img src="images/salmon.png" alt="salmon" width="148" height="43">
         <nav>
           <ul>
-            <li>Home</li>
+            <a href="./index.html">
+              <li>
+                <div class="dropdown">
+                  <button class="dropbutton">Home</button>
+                </div>
+              </li>
+            </a>
             <a href="./sales.html">
-              <li>Sales</li>
+              <li>
+                <div class="dropdown">
+                  <button class="dropbutton">Sales</button>
+                </div>
+              </li>
             </a>
             <li>
               <div class="dropdown">
                 <button class="dropbutton">Locations</button>
                 <div class="dropdowncontent">
-                  <p>Seattle</p>
-                  <p>Tokyo</p>
-                  <p>Dubai</p>
-                  <p>Paris</p>
-                  <p>Lima</p>
+                  <p>Seattle - 1st Ave & Pike Pl</p>
+                  <p>Tokyo - 2nd Ave & Sushi Ln</p>
+                  <p>Dubai - 3rd & Sky Blvd</p>
+                  <p>Paris - 4th Ave & Tower St</p>
+                  <p>Lima - 5th Ave & Bean Rd</p>
+                  <img src="images/fish.jpg" alt="a school of cartoon fish" width="100px">
                 </div>
               </div>
             </li>
+            <li>
+              <div class="dropdown">
+                  <button class="dropbutton">Hours</button>
+                  <div class="dropdowncontent">
+                    <p>6am - 8pm</p>
+                  </div>
+                </div>
+            </li>
+            <li>
+              <div class="dropdown">
+                  <button class="dropbutton">Contact Us</button>
+                  <div class="dropdowncontent">
+                    <p>Phone: 360-867-5309</p>
+                    <p>Email: pat@salmoncookies.gov</p>
+                    <img src="images/family.jpg" alt="pat and his family" width="100px" height="75px">
+                  </div>
+                </div>
+            </li>
           </ul>
         </nav>
+        <img src="images/chinook.jpg" alt="chinook salmon" width="148" height="43">
       </div>
     </header>
     <main>
-
+      <article>
+        <h2>Try our world famous fried & frosted salmon infused cookies!</h2>
+        <img src="images/frosted-cookie.jpg" alt="fish shaped frosted cookie">
+      </article>
+      <article id="merch">
+        <h2>Buy some merch!</h2>
+        <img src="images/cutter.jpeg" alt="cookie cutter shaped like a salmon">
+        <!-- <p>Cookie Cutter</p> -->
+        <img src="images/shirt.jpg" alt="shirt with a fish on it">
+        <!-- <p>Salmon Shirt</p> -->
+      </article>
     </main>
     <footer>
 
