@@ -1,5 +1,16 @@
 body {
-  background-color: whitesmoke;
+  background-color: white;
+}
+header {
+  text-align: center;
+}
+
+header > h1 {
+  font-size: 80px;
+}
+h2 {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -9,6 +20,30 @@ nav {
 nav li {
   display: inline-block;
   padding: 10px;
+}
+
+a {
+  color: white;
+  height: 20px;
+}
+
+a:visited {
+  color: white;
+}
+
+article {
+  text-align: center;
+  width: 20%;
+  margin: auto;
+}
+
+article > img {
+  display: inline-block;
+}
+
+#merch {
+  width: 70%;
+  margin: 20px auto;
 }
 
 .header-content {
@@ -36,6 +71,7 @@ nav li {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
+  top: 32px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
