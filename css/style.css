@@ -1,13 +1,17 @@
 body {
-  background-color: white;
+  background-color: whitesmoke;
 }
+
 header {
   text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 header > h1 {
   font-size: 80px;
 }
+
 h2 {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -92,7 +96,10 @@ article > img {
 
 table {
   border-collapse: collapse;
-  margin: 20px;
+  /* margin: 20px; */
+  width: 80%;
+  margin: 10px auto 30px auto;
+  border: 10px solid rgb(148, 105, 116);
 }
 
 td {
@@ -103,22 +110,33 @@ td {
   text-align: center;
 }
 
+td:hover {
+  background-color: rgb(148, 105, 116);
+  color: white;
+}
+
 th {
   padding: 4px;
   font-weight: bold;
-  /* border-bottom: 1px solid rgba(128, 128, 128, 0.25);
-  border-right: 1px solid rgba(128, 128, 128, 0.25); */
+}
+
+tr:hover {
+  background-color: rgba(136, 135, 135, 0.726);
 }
 
 form {
   margin: 20px;
+  width: 30%;
+  margin: auto;
 }
 
 fieldset {
   max-width: 300px;
-  border: 1px solid black;
+  border: 5px solid rgb(148, 105, 116);
   border-radius: 5px;
   padding: 10px;
+  width: 50%;
+  margin: 30px auto 30px auto;
 }
 
 legend {
