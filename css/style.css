@@ -89,10 +89,10 @@ article > h2 {
 article > p {
   height: 70%;
   overflow: scroll;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgb(148, 105, 116);
+  background-color: rgba(148, 105, 116, 0.76);
   color: white;
   border-radius: 5px;
 }
@@ -103,6 +103,11 @@ article > p {
   margin: 0;
   margin-left: 70px;
   border: 1px solid rgb(148, 105, 116);
+}
+
+#date {
+  font-size: 14px;
+  color: rgba(85, 84, 84, 0.555);
 }
 
 #merch {
@@ -171,7 +176,7 @@ table {
   border-collapse: collapse;
   /* margin: 20px; */
   width: 80%;
-  margin: 10px auto 30px auto;
+  margin: 10px auto 40px auto;
   border: 6px solid rgb(148, 105, 116);
 }
 
